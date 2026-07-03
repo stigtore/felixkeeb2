@@ -5,10 +5,7 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/pointing.h>
 
 #define DEFAULT 0
 #define LOWER  1
@@ -97,7 +94,7 @@ As such, those are in use within the default layer at this time.*/
             label = "home";
         };
 
-        bluetooth {
+        Mod {
             // ---------------------------------------------------------------------------------------------------------------------------------
             // |      |      |      |      |      |      |                                  |      |      |      |      |      |      |
             // |  ~   |  !   |  @   |  #   |  $   |  %   |                                  |  ^   |  &   |  *   |  (   |  )   |      |
@@ -106,52 +103,14 @@ As such, those are in use within the default layer at this time.*/
             // |      |      |      |      |      |      |      |                    |      |      |      |      |      |      |      |
 
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                   &trans  &trans  &kp C_PREV  &kp C_PLAY  &kp C_NEXT  &kp DELETE
-&trans      &trans        &trans           &trans        &kp C_RESET   &trans                                         &trans  &trans  &kp INS     &trans      &kp DELETE  &trans
-&trans      &trans        &kp PRINTSCREEN  &trans        &trans        &trans                                         &trans  &trans  &trans      &trans      &trans      &trans
-&trans      &trans        &trans           &trans        &trans        &kp PAUSE_BREAK  &kp C_VOL_UP    &kp C_VOL_DN  &trans  &trans  &trans      &trans      &trans      &trans
-&sys_reset  &trans        &trans           &trans        &out OUT_TOG  &trans           &kp F19         &trans        &trans  &trans  &trans      &trans      &trans      &trans
+&kp GRAVE  &kp F1          &kp F2          &kp F3      &kp F4         &kp F5                                     &kp F6      &kp F7            &kp F8      &kp F9           &kp F10          &kp EQUAL
+&kp F11    &kp HOME        &kp UP_ARROW    &kp END     &kp PAGE_UP    &kp K_VOLUME_UP                            &kp K_PREV  &kp K_PLAY_PAUSE  &kp K_NEXT  &trans           &trans           &kp HASH
+&kp F12    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT   &kp PAGE_DOWN  &kp K_VOLUME_DOWN                          &trans      &trans            &trans      &trans           &trans           &trans
+&trans     &kp K_UNDO      &kp K_CUT       &kp K_COPY  &kp K_PASTE    &kp K_MUTE         &kp C_VOL_UP    &trans  &kp K_CALC  &trans            &trans      &kp PRINTSCREEN  &kp PAUSE_BREAK  &trans
+&trans     &trans          &trans          &trans      &trans         &trans             &trans          &trans  &kp INSERT  &trans            &trans      &trans           &trans           &trans
             >;
 
             label = "blue";
-        };
-
-        function {
-            // ---------------------------------------------------------------------------------------------------------------------------------
-            // |       |       |       |       |       |       |                                    |       |       |       |       |       |       |
-            // |   `   |   1   |   2   |   3   |   4   |   5   |                                    |   6   |   7   |   8   |   9   |   0   |  DEL  |
-            // |       |  F1   |  F2   |  F3   |  F4   |  F5   |                                    |  F6   |   -   |   =   |   [   |   ]   |   \   |
-            // |       |  F7   |  F8   |  F9   |  F10  |  F11  |       |                    |       |  F12  |       | PSCRN | PG_DN | PG_UP |       |
-            // |       |       |       |       |       |       |       |                    |       |       |       | NEXT  | VOL-  | VOL+  | PLAY  |
-
-            bindings = <
-&trans  &kp F1                 &kp F2                 &kp F3                 &kp F4                 &kp F5                                   &kp F6                 &kp F7                 &kp F8                 &kp F9                 &kp F10                        &kp F11
-&trans  &kp LC(LA(LG(LS(Q))))  &kp LC(LA(LG(LS(W))))  &kp LC(LA(LG(LS(E))))  &kp LC(LA(LG(LS(R))))  &kp LC(LA(LG(LS(T))))                    &kp LS(LG(LC(LA(Y))))  &kp LS(LG(LC(LA(U))))  &kp LS(LG(LC(LA(I))))  &kp LS(LG(LC(LA(O))))  &kp LS(LG(LC(LA(P))))          &kp F12
-&trans  &kp LC(LA(LG(LS(A))))  &kp LC(LA(LG(LS(S))))  &kp LC(LA(LG(LS(D))))  &kp LC(LA(LG(LS(F))))  &kp LC(LA(LG(LS(G))))                    &kp LS(LC(LA(LG(H))))  &kp LS(LC(LA(LG(J))))  &kp LS(LC(LA(LG(K))))  &kp LS(LC(LA(LG(L))))  &kp LS(LC(LA(LG(SEMICOLON))))  &kp LS(LA(LC(LG(APOSTROPHE))))
-&trans  &kp LC(LA(LG(LS(Z))))  &kp LC(LA(LG(LS(X))))  &kp LC(LA(LG(LS(C))))  &kp LC(LA(LG(LS(V))))  &kp LC(LA(LG(LS(B))))  &trans    &trans  &kp LS(LC(LG(LA(N))))  &kp LS(LC(LA(LG(M))))  &kp LS(LA(LC(COMMA)))  &kp LS(LC(LA(DOT)))    &kp LS(LC(LA(LG(FSLH))))       &trans
-&trans  &trans                 &trans                 &trans                 &trans                 &trans                 &trans    &trans  &trans                 &msc SCRL_LEFT         &msc SCRL_RIGHT        &trans                 &trans                         &trans
-            >;
-
-            label = "func";
-        };
-
-        semicolon {
-            // ---------------------------------------------------------------------------------------------------------------------------------
-            // |    `     |    !     |    @     |    #     |    $     |    %     |                                          |    ^     |    &     |    *     |    (     |    )     |  EP TOG  |
-            // |  BT CLR  | BT SEL0  | BT SEL1  | BT SEL2  | BGT SEL3 | BT SEL4  |                                          | RGB EFF+ | RGB HUE+ | RGB SAT+ | RGB SPD+ | RGB BRI+ | RGB TOG  |
-            // |  BT NXT  | OUT TOG  | OUT USB  | OUT BLE  |          |          |                                          | RGB EFF- | RGB HUE- | RGB SAT- | RGB SPD- | RGB BRI- |          |
-            // |  BT PRV  |          |          |          |          |          |    {     |                    |    }     |          |          |          |          |          |          |
-            // |          |          |          |          |          |          |          |                    |          |          |          |          |          |          |          |
-
-            bindings = <
-&trans  &kp EXCL   &kp AT         &kp HASH      &kp DLLR      &kp PRCNT                                 &kp CARET  &kp AMPS        &kp ASTRK        &kp LPAR   &kp RPAR  &trans
-&trans  &kp GRAVE  &kp LS(TILDE)  &kp LS(LBRC)  &kp LS(RBRC)  &trans                                    &kp PG_UP  &kp HOME        &kp UP           &kp END    &trans    &trans
-&trans  &trans     &trans         &kp LBKT      &kp RBKT      &trans                                    &kp PG_DN  &kp LEFT        &kp DOWN         &kp RIGHT  &trans    &trans
-&trans  &trans     &trans         &kp LS(LPAR)  &kp LS(RPAR)  &kp DEL    &trans    &kp LS(LC(LA(F17)))  &kp DEL    &trans          &trans           &trans     &trans    &trans
-&trans  &trans     &trans         &trans        &trans        &trans     &trans    &trans               &trans     &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans     &trans    &trans
-            >;
-
-            label = "semi";
         };
     };
 };
