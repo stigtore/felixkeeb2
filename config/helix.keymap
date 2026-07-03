@@ -87,11 +87,11 @@ As such, those are in use within the default layer at this time.*/
             // | ADJUST |  ESC   |  ALT   |  LGUI  | EISUU  | LOWER  | SPACE  |                    |  SPACE | RAISE  |  KANA  |  LEFT  |  DOWN  |  UP    |  RIGHT |
 
             bindings = <
-&kp ESCAPE  &kp N1        &kp N2            &kp N3   &kp N4      &kp N5                                         &kp N6     &kp N7            &kp N8             &kp N9             &kp N0                &kp BACKSPACE
-&kp TAB     &kp Q         &kp W             &kp E    &kp R       &kp T                                          &kp Y      &kp U             &kp I              &kp O              &kp P                 &lt 1 BACKSLASH
-&kp F20     &kp A         &kp S             &kp D    &kp F       &kp G                                          &kp H      &kp J             &kp K              &kp L              &lt_semi 3 SEMICOLON  &lt_right 2 APOSTROPHE
-&kp LSHFT   &kp Z         &kp X             &kp C    &kp V       &kp B   &lt_left 2 EQUAL    &lt_right 2 MINUS  &kp N      &kp M             &kp COMMA          &kp PERIOD         &kp SLASH             &kp RIGHT_SHIFT
-&kp LCTRL   &kp LEFT_ALT  &kp LEFT_COMMAND  &kp F19  &kp DELETE  &mo 2   &kp SPACE           &kp ENTER          &mo RAISE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp RIGHT_COMMAND  &kp RIGHT_ALT         &kp RCTRL
+&kp PIPE    &kp N1         &kp N2        &kp N3  &kp N4     &kp N5                                            &kp N6      &kp N7     &kp N8         &kp N9          &kp N0         &kp MINUS
+&kp TAB     &kp Q          &kp W         &kp E   &kp R      &kp T                                             &kp Y       &kp U      &kp I          &kp O           &kp P          &kp SQT
+&kp ESCAPE  &kp A          &kp S         &kp D   &kp F      &kp G                                             &kp H       &kp J      &kp K          &kp L           &kp SEMICOLON  &kp ENTER
+&kp LSHFT   &kp Z          &kp X         &kp C   &kp V      &kp B          &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp N       &kp M      &kp COMMA      &kp PERIOD      &kp SLASH      &kp RIGHT_SHIFT
+&kp LCTRL   &kp LEFT_META  &kp LEFT_ALT  &mo 1   &kp SPACE  &kp BACKSPACE  &kp CAPSLOCK      &mo 1            &kp DELETE  &kp SPACE  &kp RIGHT_ALT  &kp RIGHT_META  &kp C_MENU     &kp RCTRL
             >;
 
             label = "home";
